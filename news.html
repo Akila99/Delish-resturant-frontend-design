@@ -228,7 +228,7 @@
 
             <div class="news-line"></div>
 
-            <button>
+            <button class="read-more">
               READ MORE
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -286,6 +286,17 @@
                 </g>
               </svg>
             </button>
+            <div class="extra-news-content">
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -335,7 +346,7 @@
 
             <div class="news-line"></div>
 
-            <button>
+            <button class="read-more">
               READ MORE
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -393,6 +404,17 @@
                 </g>
               </svg>
             </button>
+            <div class="extra-news-content">
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -442,7 +464,7 @@
 
             <div class="news-line"></div>
 
-            <button>
+            <button class="read-more">
               READ MORE
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -500,6 +522,17 @@
                 </g>
               </svg>
             </button>
+            <div class="extra-news-content">
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -549,7 +582,7 @@
 
             <div class="news-line"></div>
 
-            <button>
+            <button class="read-more">
               READ MORE
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -607,6 +640,17 @@
                 </g>
               </svg>
             </button>
+            <div class="extra-news-content">
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -1002,5 +1046,43 @@
         </div>
       </div>
     </section>
+    <script src="./index.js">
+      const readMoreButtons = document.querySelectorAll(".read-more");
+      const extraContents = document.querySelectorAll(".extra-news-content");
+
+      readMoreButtons.forEach((button, index) => {
+        const extraContent = extraContents[index];
+
+        button.addEventListener("click", () => {
+          console.log("Button clicked", index); // log click per button
+
+          extraContent.classList.toggle("show");
+
+          if (extraContent.classList.contains("show")) {
+            button.innerHTML = `
+        READ LESS
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 256 256">
+          <g transform="translate(1.4 1.4) scale(2.81)">
+            <polygon points="39.64,0 35.36,4.28 76.08,45 35.36,85.72 39.64,90 84.64,45"
+              style="stroke:#cb3a1a; stroke-width:5; fill:red;" />
+            <polygon points="9.64,0 5.36,4.28 46.08,45 5.36,85.72 9.64,90 54.64,45"
+              style="stroke:#cb3a1a; stroke-width:5; fill:red;" />
+          </g>
+        </svg>`;
+          } else {
+            button.innerHTML = `
+        READ MORE
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 256 256">
+          <g transform="translate(1.4 1.4) scale(2.81)">
+            <polygon points="39.64,90 35.36,85.72 76.08,45 35.36,4.28 39.64,0 84.64,45"
+              style="stroke:#cb3a1a; stroke-width:5; fill:red;" />
+            <polygon points="9.64,90 5.36,85.72 46.08,45 5.36,4.28 9.64,0 54.64,45"
+              style="stroke:#cb3a1a; stroke-width:5; fill:red;" />
+          </g>
+        </svg>`;
+          }
+        });
+      });
+    </script>
   </body>
 </html>
