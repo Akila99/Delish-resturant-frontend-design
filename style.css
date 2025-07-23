@@ -3825,6 +3825,20 @@ background: #CB3A1A;
   gap: 5px;
   justify-content: center;
   align-items: center;
+   cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.tags-element a{
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.tags-element a:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+  text-decoration: underline;
+  color: blue;
 }
 
 .tag-heder{
@@ -3852,6 +3866,17 @@ background: #CB3A1A;
   gap: 20px;
 }
 
+.tag-soc-icn a{
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.tag-soc-icn a svg:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+
 .post-changer{
   display: flex;
   justify-content: space-between;
@@ -3867,8 +3892,15 @@ background: #CB3A1A;
   display: flex;
   align-items: center;
   gap: 5px;
-  
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
+.previous-post:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
 
 .previous-post button{
   border: none;
@@ -3881,6 +3913,13 @@ background: #CB3A1A;
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.next-post:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .next-post{
@@ -3947,6 +3986,17 @@ background: #CB3A1A;
   display: flex;
   gap: 10px;
   width: 720px;
+
+}
+
+.cmnt-row span{
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cmnt-row span:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .date-name-cmnt h2 {
@@ -4470,7 +4520,6 @@ background: #CB3A1A;
   background-color: #F6F6F6;
 }
 
-
 .shop-details-hero{
   width: 100%;
   background-image: url('./assert/shop-details-hero.png'); 
@@ -4579,6 +4628,19 @@ background: #CB3A1A;
 
 .arrow:hover {
   color: white;
+}
+
+.menu-page-read-more-btn{
+  color: black;
+  font-weight: 700 !important;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-page-read-more-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .arrow:disabled {

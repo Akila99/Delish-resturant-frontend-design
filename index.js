@@ -223,7 +223,86 @@ document.addEventListener("DOMContentLoaded", () => {
         </svg>`;
       }
     });
-  });      
+  });     
+  
+  
+  //shop details page js
+  const spinnerValue = document.getElementById("spinnerValue");
+      const arrowUp = document.getElementById("arrowUp");
+      const arrowDown = document.getElementById("arrowDown");
+
+      // Get SVG <path> elements
+      const arrowUpPath = arrowUp.querySelector("path");
+      const arrowDownPath = arrowDown.querySelector("path");
+
+      let value = 1;
+      const min = 1;
+      const max = 5;
+
+      arrowUp.addEventListener("click", () => {
+        if (value < max) {
+          value++;
+          updateDisplay();
+          arrowUpPath.setAttribute("fill-opacity", "1");
+          arrowDownPath.setAttribute("fill-opacity", "0.4"); // dim it
+        }
+      });
+
+      arrowDown.addEventListener("click", () => {
+        if (value > min) {
+          value--;
+          updateDisplay();
+          arrowDownPath.setAttribute("fill-opacity", "1");
+          arrowUpPath.setAttribute("fill-opacity", "0.4"); // dim it
+        }
+      });
+
+      function updateDisplay() {
+        spinnerValue.textContent = value;
+        arrowUp.disabled = value >= max;
+        arrowDown.disabled = value <= min;
+      }
+
+      // Set initial display and opacity state
+      updateDisplay();
+      arrowUpPath.setAttribute("fill-opacity", "1");
+      arrowDownPath.setAttribute("fill-opacity", "0.4");
+
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabContainer = document.querySelector(".shop-details-des");
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all tabs
+          tabButtons.forEach((b) => b.classList.remove("active"));
+
+          // Add active class to clicked tab
+          btn.classList.add("active");
+
+          // Add .tab-active class to container
+          tabContainer.classList.add("tab-active");
+        });
+      });
+
+      const tabs = document.querySelectorAll(".tab-btn");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Toggle active tab styles
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          // Toggle content
+          const target = tab.getAttribute("data-target");
+          contents.forEach((content) => {
+            content.classList.remove("show");
+            if (content.id === target) {
+              content.classList.add("show");
+            }
+          });
+        });
+      });
 
 
   //Home page read more btn
