@@ -318,6 +318,8 @@ html, body {
     cursor: pointer;
     padding: 10px 20px;
     position: relative;
+    display: inline-block;
+    color: white;
 }
 
 .btn.active::after {
@@ -364,6 +366,7 @@ html, body {
   padding: 5px;
   border-radius: 5px;
   width: fit-content;
+  margin-bottom: 10px;
 }
 
 
@@ -376,12 +379,14 @@ html, body {
 .welcome-text p{
   font-family: 'Jost', sans-serif;
   width: 33rem;
+  margin-top: 10px;
 }
 
 .tel-details{
   display: flex;
   gap: 5px;
   width: fit-content;
+  margin-top: 20px;
 
 }
 
@@ -515,6 +520,7 @@ html, body {
 .service-card{
   background-color: #fff;
   padding: 10px;
+  padding-bottom: 30px;
 }
 
 .service-card   h1{
@@ -535,9 +541,11 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  margin-top: 20px;
+  
 }
 
-.read-more-btn{
+.home-read-more-btn{
   all: unset;
   cursor: pointer;
   color: #CB3A1A;
@@ -546,6 +554,22 @@ html, body {
   text-decoration: none;
   border: 1px solid #CB3A1A;
   padding: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease
+}
+
+
+.home-read-more-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.home-extra-service-des-content {
+  display: none;
+  margin-top: 10px;
+}
+.home-extra-service-des-content.show {
+  display: block;
 }
 
 @media (max-width: 1024px) {
@@ -3244,6 +3268,18 @@ input, select, textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.page-no:hover {
+  transform: scale(1.06);
+  opacity: 0.9;
+}
+
+.page-no.active {
+  background-color: #CB3A1A;
+  color: white;
 }
 
 .news-side-sec{
@@ -3279,6 +3315,13 @@ input, select, textarea {
   background-color:#CB3A1A;
   padding: 20px;
   width: fit-content;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.search-icon:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .recent-post{
@@ -3296,7 +3339,15 @@ input, select, textarea {
 .post-row{
   display: flex;
   gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease
 }
+
+.post-row:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
 
 .post h1, p{
   padding: 0;
@@ -3339,6 +3390,13 @@ input, select, textarea {
   gap: 2px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.category-row:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .category-name{
@@ -3414,13 +3472,35 @@ input, select, textarea {
   text-transform: uppercase;
   padding: 10px 14px;
   background-color: white;
-  
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.tag:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .tag h3{
   padding: 0;
   margin: 0;
 }
+
+.tag.active {
+  background-color: #CB3A1A;
+  color: white;
+}
+
+/* bg */
+
+position: absolute;
+width: 80px;
+height: 35px;
+left: 1253px;
+top: 2215px;
+
+/* main-color */
+background: #CB3A1A;
+
 
 /* @media screen and (max-width: 768px) {
 

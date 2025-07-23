@@ -111,28 +111,35 @@
 //     // Add email submission logic here
 //   }
 
+//Table Booking button in Nav bar
 document.addEventListener("DOMContentLoaded", () => {
   const tableBooking = document.querySelector('.tableBooking');
   tableBooking?.addEventListener('click', () => {
     window.location.href = 'table-booking.html';
   });
 
+  //Table booking btn for About us 
   const bookingButton = document.querySelector('.booking-button');
   bookingButton?.addEventListener('click', () => {
     window.location.href = 'table-booking.html';
   });
 
+  //table booking btn for footer area btn
   const bookingID = document.getElementById('bookATable');
   bookingID?.addEventListener('click', () => {
     window.location.href = 'table-booking.html';
   });
 
+  //Hamburger toggle for Nav bar
   const toggle = document.getElementById('menuToggle');
   const navMenu = document.querySelector('.nav-menu');
   toggle?.addEventListener('click', () => {
     navMenu?.classList.toggle('show');
   });
 
+  
+
+  //home page food menu food cat all food/ breakfast / lunch/ dinner
   const menuContent = document.querySelector(".home-menu-content");
   const menuButtons = document.querySelectorAll(".home-menu-btn");
 
@@ -148,19 +155,52 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButtons[0].click();
   }
 
-  const readMoreButtons = document.querySelectorAll(".read-more");
-      const extraContents = document.querySelectorAll(".extra-news-content");
+  //new page popular tags
+  // const menuContent = document.querySelector(".home-menu-content");
+  const tagButtons = document.querySelectorAll(".tag");
 
-      readMoreButtons.forEach((button, index) => {
-        const extraContent = extraContents[index];
+  tagButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tagButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      // menuContent?.classList.add("show");
+    });
+  });
 
-        button.addEventListener("click", () => {
-          console.log("Button clicked", index); // log click per button
+  if (tagButtons.length > 0) {
+    tagButtons[0].click();
+  }
 
-          extraContent.classList.toggle("show");
+  //News page content page changer
+  const pageNoChangeButtons = document.querySelectorAll(".page-no");
 
-          if (extraContent.classList.contains("show")) {
-            button.innerHTML = `
+  pageNoChangeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      pageNoChangeButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      // menuContent?.classList.add("show");
+    });
+  });
+
+  if (pageNoChangeButtons.length > 0) {
+    pageNoChangeButtons[0].click();
+  }
+
+  // news page read more btn
+
+    const readMoreButtons = document.querySelectorAll(".read-more");
+    const extraContents = document.querySelectorAll(".extra-news-content");
+
+    readMoreButtons.forEach((button, index) => {
+    const extraContent = extraContents[index];
+
+    button.addEventListener("click", () => {
+    console.log("Button clicked", index); // log click per button
+
+    extraContent.classList.toggle("show");
+
+    if (extraContent.classList.contains("show")) {
+      button.innerHTML = `
         READ LESS
         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 256 256">
           <g transform="translate(1.4 1.4) scale(2.81)">
@@ -171,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </g>
         </svg>`;
           } else {
-            button.innerHTML = `
+      button.innerHTML = `
         READ MORE
         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 256 256">
           <g transform="translate(1.4 1.4) scale(2.81)">
@@ -181,9 +221,46 @@ document.addEventListener("DOMContentLoaded", () => {
               style="stroke:#cb3a1a; stroke-width:5; fill:red;" />
           </g>
         </svg>`;
-          }
-        });
-      });
+      }
+    });
+  });      
+
+
+  //Home page read more btn
+  const homeReadMoreButtons = document.querySelectorAll(".home-read-more-btn");
+  const homePageServiceExtraContents = document.querySelectorAll(".home-extra-service-des-content");
+
+    homeReadMoreButtons.forEach((button, index) => {
+    const homePageServiceExtraContent = homePageServiceExtraContents[index];
+
+    button.addEventListener("click", () => {
+    console.log("Button clicked", index); // log click per button
+
+    homePageServiceExtraContent.classList.toggle("show");
+
+    if (homePageServiceExtraContent.classList.contains("show")) {
+      button.innerHTML = `
+        READ LESS
+        <svg width="20" height="1" viewBox="0 0 20 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="0.5" x2="20" y2="0.5" stroke="#CB3A1A"/>
+            </svg>
+            <svg width="12" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 1L15 5.5M15 5.5L10.5 10M15 5.5H1" stroke="#CB3A1A" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>`;
+          } else {
+      button.innerHTML = `
+        READ MORE
+        <svg width="20" height="1" viewBox="0 0 20 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="0.5" x2="20" y2="0.5" stroke="#CB3A1A"/>
+            </svg>
+            <svg width="12" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 1L15 5.5M15 5.5L10.5 10M15 5.5H1" stroke="#CB3A1A" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>`;
+      }
+    });
+  }); 
+
+      //home page gallery scroller
 
   const gallery = document.getElementById("galleryScroll");
   const leftArrow = document.getElementById("leftArrow");
@@ -206,5 +283,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.submitEmail = submitEmail; // expose to inline onclick if needed
 
+  function setActive(button) {
+    document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  }
+
+  window.setActive = setActive;
 
 });
